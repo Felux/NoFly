@@ -1,0 +1,8 @@
+name: NoFly
+version: ${project.version}
+main: io.felux.nofly.NoFly
+api-version: 1.13
+prefix: NF
+authors: [Felux]
+description: Easily specify regions and worlds where flight isn't allowed.
+website: https://felux.io/
