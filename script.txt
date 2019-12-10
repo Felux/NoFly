@@ -1,0 +1,32 @@
+classpath     "%classpathLibs%"
+              "%compileArtifactPath%"
+              "%pluginArtifactPath%";
+open          "server/plugins/%project.build.finalName%.%project.packaging%";
+
+stringEncryptionExclude
+              io.felux.nofly.NoFly;
+
+trimExclude   *.* @*.EventHandler *(*);
+
+exclude       io.felux.nofly. and
+              io.felux.nofly.NoFly and
+
+              io.felux.nofly.api. and
+              io.felux.nofly.api.* and
+              io.felux.nofly.api.* * and
+              io.felux.nofly.api.* * (*)
+              ;
+
+obfuscate   obfuscateFlow=extraAggressive
+            encryptStringLiterals=enhanced
+            mixedCaseClassNames=false
+            aggressiveMethodRenaming=true
+            randomize=true
+            localVariables=delete
+            lineNumbers=scramble
+            autoReflectionHandling=normal
+            obfuscateReferences=none
+            obfuscateReferenceStructures=inSpecialClass
+            lineNumbers=scramble;
+
+saveAll     "server/plugins/%project.build.finalName%.%project.packaging%";

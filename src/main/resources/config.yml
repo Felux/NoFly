@@ -1,0 +1,8 @@
+# NoFly
+# A Product of Felux.io Development.
+
+blacklisted:
+  region:
+    - 'bad_region'
+  world:
+    - 'bad_world'

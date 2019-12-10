@@ -6,3 +6,8 @@ prefix: NF
 authors: [Felux]
 description: Easily specify regions and worlds where flight isn't allowed.
 website: https://felux.io/
+softdepend: ["WorldGuard"]
+
+commands:
+  nofly:
+    aliases: ["noflyzone", "noflying", "badflyzone"]

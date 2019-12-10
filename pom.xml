@@ -31,6 +31,36 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>com.zelix.plugins</groupId>
+                <artifactId>zkm-plugin</artifactId>
+                <version>1.0.3</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.zelix.plugins</groupId>
+                        <artifactId>ZKM</artifactId>
+                        <version>10.0.0</version>
+                        <scope>system</scope>
+                        <systemPath>D:/Documents/Development/ZKM/ZKM.jar</systemPath>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>obfuscate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- Will be used to inject values into the plugin but will not be in project properties -->
+                    <isSkip>false</isSkip>
+                    <scriptFile>script.txt</scriptFile>
+                    <classpathLibs>
+                        <lib>${java.home}/lib/rt.jar</lib>
+                    </classpathLibs>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.1.0</version>
@@ -45,6 +75,17 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.3.1</version>
+                <configuration>
+                    <outputDirectory>server/plugins</outputDirectory>
+                    <archive>
+                        <addMavenDescriptor>false</addMavenDescriptor>
+                    </archive>
+                </configuration>
             </plugin>
         </plugins>
         <resources>
@@ -64,6 +105,10 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+        <repository>
+            <id>codemc-repo</id>
+            <url>https://repo.codemc.org/repository/maven-public/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -72,6 +117,11 @@
             <artifactId>spigot-api</artifactId>
             <version>1.14.4-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codemc.worldguardwrapper</groupId>
+            <artifactId>worldguardwrapper</artifactId>
+            <version>1.1.6-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>

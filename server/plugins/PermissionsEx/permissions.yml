@@ -1,0 +1,33 @@
+groups:
+  default:
+    options:
+      default: true
+    permissions:
+    - nte.default
+    - modifyworld.*
+  Owner:
+    permissions:
+    - '*'
+  Moderator:
+    permissions:
+    - nte.moderator
+  Dev:
+    permissions:
+    - nte.dev
+schema-version: 1
+users:
+  ed6daf33-575b-460b-a2f3-e208a1004c10:
+    group:
+    - Owner
+    options:
+      name: Siri
+  069a79f4-44e9-4726-a5be-fca90e38aaf5:
+    group:
+    - Dev
+    options:
+      name: Notch
+  63fd3ad4-cf85-4eff-b2f0-3583f5324f21:
+    group:
+    - Moderator
+    options:
+      name: Youtuber
